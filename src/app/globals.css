@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+
+  /* Brand */
+  --color-brand-50: #f6f1ff;
+  --color-brand-100: #ece2ff;
+  --color-brand-200: #d9c6ff;
+  --color-brand-300: #bc9bff;
+  --color-brand-400: #a06bff;
+  --color-brand-500: #8b45f7;
+  --color-brand-600: #7a2ee6;
+  --color-brand-700: #6621c4;
+  --color-brand-800: #521d9c;
+  --color-brand-900: #3a1570;
+  --color-magenta-400: #e26bf0;
+  --color-magenta-500: #c94de0;
+
+  /* Dark surfaces (hero, footer) */
+  --color-night-950: #0b0716;
+  --color-night-900: #120b24;
+  --color-night-800: #1b1235;
+  --color-night-700: #281a4a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1330;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-magenta-400), var(--color-brand-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(90deg, var(--color-brand-600), var(--color-magenta-500));
+}
+
+.glass {
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgb(139 69 247 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(139 69 247 / 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
