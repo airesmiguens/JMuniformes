@@ -2,7 +2,7 @@
 
 Site institucional da JM Uniformes (Viana, Luanda): catálogo, processo, pedido de orçamento via WhatsApp e configurador 3D de uniformes.
 
-**Pré-visualização:** https://airesmiguens.github.io/jm-uniformes/
+**Pré-visualização:** https://airesmiguens.github.io/JMuniformes/
 
 ## Desenvolvimento
 
@@ -18,7 +18,7 @@ npm run dev -- -p 3005   # http://localhost:3005
 ## Publicação
 
 Cada `push` para `main` publica o site no GitHub Pages (`.github/workflows/deploy.yml`).
-O site é exportado como HTML estático (`output: "export"`), servido em `/jm-uniformes/`.
+O site é exportado como HTML estático (`output: "export"`), servido em `/JMuniformes/`.
 
 ## Antes do lançamento oficial
 

@@ -200,7 +200,7 @@ export const nav = [
   { href: "/contactos", label: "Contactos" },
 ];
 
-/** Prefixes a /public path with the deploy base path (e.g. /jm-uniformes on GitHub Pages). */
+/** Prefixes a /public path with the deploy base path (e.g. /JMuniformes on GitHub Pages). */
 export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
 
 export function whatsappLink(message: string) {
