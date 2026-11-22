@@ -14,10 +14,10 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { ButtonLink, Photo, SectionHeading, productIcons } from "@/components/ui";
-import equipa from "../../public/images/equipa.jpg";
 import fabrica from "../../public/images/fabrica.jpg";
 import { categories, company, fabrics, processSteps, products, stats, terms } from "@/lib/site";
 import { PortfolioStrip } from "@/components/Portfolio";
+import { HeroVideos } from "@/components/HeroVideos";
 
 export default function Home() {
   return (
@@ -51,13 +51,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative">
-            <Photo
-              src={equipa}
-              alt="Equipa JM Uniformes com uniformes corporativos, de saúde e polos bordados"
-              priority
-              className="aspect-[16/11] rounded-3xl border border-brand-400/40 shadow-2xl shadow-brand-900/50"
-            />
+          <div className="relative mx-auto w-full max-w-[440px]">
+            <HeroVideos className="aspect-[4/5] w-full rounded-3xl border border-brand-400/40 shadow-2xl shadow-brand-900/50" />
             <div className="absolute border border-white/10 bg-night-900/85 backdrop-blur-md -bottom-6 left-4 flex items-center gap-3 rounded-2xl px-4 py-3 text-white sm:-left-8">
               <TrendingUp className="text-magenta-400" />
               <div>
@@ -65,7 +60,7 @@ export default function Home() {
                 <p className="text-xs text-white/70">Uniformes mensais</p>
               </div>
             </div>
-            <div className="absolute border border-white/10 bg-night-900/85 backdrop-blur-md -top-5 right-4 hidden items-center gap-3 rounded-2xl px-4 py-3 text-white sm:flex">
+            <div className="absolute border border-white/10 bg-night-900/85 backdrop-blur-md top-1/3 -right-8 hidden items-center gap-3 rounded-2xl px-4 py-3 text-white sm:flex">
               <Clock className="text-magenta-400" />
               <div>
                 <p className="font-display text-lg font-bold leading-none">{terms.sampleDays} dias</p>
