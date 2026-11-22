@@ -61,27 +61,21 @@ function drawWeave(ctx: CanvasRenderingContext2D, fabric: FabricId) {
   }
 }
 
-const cache = new Map<FabricId, { texture: THREE.CanvasTexture; url: string }>();
+const cache = new Map<FabricId, THREE.CanvasTexture>();
 
-function build(fabric: FabricId) {
-  let hit = cache.get(fabric);
-  if (!hit) {
+export function weaveTexture(fabric: FabricId) {
+  let texture = cache.get(fabric);
+  if (!texture) {
     const canvas = document.createElement("canvas");
     canvas.width = canvas.height = SIZE;
     drawWeave(canvas.getContext("2d")!, fabric);
-    const texture = new THREE.CanvasTexture(canvas);
+    texture = new THREE.CanvasTexture(canvas);
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     texture.anisotropy = 4;
-    hit = { texture, url: canvas.toDataURL() };
-    cache.set(fabric, hit);
+    cache.set(fabric, texture);
   }
-  return hit;
+  return texture;
 }
-
-export const weaveTexture = (fabric: FabricId) => build(fabric).texture;
-
-/** Same pattern as a data URL, for the fabric cards in the side panel. */
-export const weaveDataUrl = (fabric: FabricId) => build(fabric).url;
 
 /** Recolours the (single-colour) logo to the chosen thread colour. */
 export function embroideryTexture(logo: HTMLImageElement, thread: string) {

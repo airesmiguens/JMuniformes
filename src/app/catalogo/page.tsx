@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CatalogGrid } from "@/components/CatalogGrid";
 import { QuoteEstimator } from "@/components/QuoteEstimator";
 import { PageHero, SectionHeading } from "@/components/ui";
 import { Flame } from "lucide-react";
-import { careNote, fabrics, terms } from "@/lib/site";
+import { asset, careNote, fabrics, terms } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Catálogo" };
 
@@ -33,14 +34,15 @@ export default function CatalogoPage() {
             subtitle="Não sabe qual escolher? Indique o uso e o ambiente de trabalho no pedido e aconselhamos o melhor."
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {fabrics.map((f, i) => (
+            {fabrics.map((f) => (
               <div key={f.name} className="overflow-hidden rounded-2xl border border-slate-200">
-                <div
-                  className="h-24"
-                  style={{
-                    background: `repeating-linear-gradient(${45 + i * 30}deg, #1b1235 0 3px, #281a4a 3px 6px)`,
-                  }}
-                  aria-hidden="true"
+                <Image
+                  src={asset(f.image)}
+                  alt={`Tecido ${f.name} (grande plano)`}
+                  width={640}
+                  height={427}
+                  sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
+                  className="h-32 w-full object-cover"
                 />
                 <div className="p-4">
                   <h3 className="font-display font-semibold text-night-900">{f.name}</h3>

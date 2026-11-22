@@ -16,7 +16,8 @@ import {
 import { ButtonLink, Photo, SectionHeading, productIcons } from "@/components/ui";
 import equipa from "../../public/images/equipa.jpg";
 import fabrica from "../../public/images/fabrica.jpg";
-import { categories, clients, company, fabrics, processSteps, products, stats, terms } from "@/lib/site";
+import { categories, company, fabrics, processSteps, products, stats, terms } from "@/lib/site";
+import { PortfolioStrip } from "@/components/Portfolio";
 
 export default function Home() {
   return (
@@ -82,23 +83,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Clients marquee */}
-      <section className="border-b border-slate-100 bg-white py-10" aria-label="Clientes de confiança">
-        <p className="text-center text-sm font-semibold uppercase tracking-widest text-slate-400">
-          Empresas que confiam em nós
-        </p>
-        <div className="relative mt-6 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">
-          <div className="animate-marquee flex w-max gap-6">
-            {[...clients, ...clients].map((c, i) => (
-              <div
-                key={i}
-                className="flex h-16 w-40 items-center justify-center rounded-xl border border-dashed border-slate-300 text-sm text-slate-400"
-              >
-                {c}
-              </div>
-            ))}
+      {/* Portfolio */}
+      <section className="border-b border-slate-100 bg-white py-14" aria-labelledby="portfolio-title">
+        <div className="mx-auto mb-8 flex max-w-6xl flex-wrap items-end justify-between gap-4 px-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-500">Portfólio</p>
+            <h2 id="portfolio-title" className="font-display mt-2 text-3xl font-bold tracking-tight text-night-900 sm:text-4xl">
+              Trabalhos que já vestimos
+            </h2>
           </div>
+          <ButtonLink href="/portfolio" variant="outline">
+            Ver portfólio completo <ArrowRight size={16} />
+          </ButtonLink>
         </div>
+        <PortfolioStrip />
       </section>
 
       {/* Highlights */}

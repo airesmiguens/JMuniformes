@@ -40,7 +40,6 @@ import {
 } from "@/lib/configurator";
 import { asset, company, fabrics, terms } from "@/lib/site";
 import Scene, { type ViewerApi } from "./Scene";
-import { weaveDataUrl } from "./textures";
 
 type Selectable = PartId | "bordado";
 type Tab = "modelos" | "personalizacao" | "materiais" | "orcamento";
@@ -467,13 +466,8 @@ export default function Configurator() {
                         }`}
                       >
                         <span
-                          className="h-16 w-16 shrink-0 rounded-xl border border-white/10"
-                          style={{
-                            backgroundColor: config.colors.corpo,
-                            backgroundImage: `url(${weaveDataUrl(id)})`,
-                            backgroundSize: "48px",
-                            backgroundBlendMode: "multiply",
-                          }}
+                          className="h-16 w-16 shrink-0 rounded-xl border border-white/10 bg-cover bg-center"
+                          style={{ backgroundImage: `url(${asset(f.image)})` }}
                         />
                         <span className="min-w-0 flex-1">
                           <span className="flex items-center justify-between gap-2">

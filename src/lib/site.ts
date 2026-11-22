@@ -124,30 +124,36 @@ export const products: Product[] = [
   },
 ];
 
+// `image`: close-ups rendered by scripts/render-fabrics.py (replace with real swatch photos, same names).
 // `care` comes from "Regras de Engomagem por Tipo de Tecido" (Regras_Area_Costura_Retificacao_Engomagem_JM.pdf).
 export const fabrics = [
   {
     name: "Sarja",
+    image: "/images/tecidos/sarja.jpg",
     description: "Robusta e durável — ideal para fardas industriais e calças de trabalho.",
     care: "Engomar a temperatura alta, com vapor e cuidado com as costuras.",
   },
   {
     name: "Minimatt",
+    image: "/images/tecidos/minimatt.jpg",
     description: "Toque suave, não amarrota com facilidade — ótimo para uniformes de escritório.",
     care: "Engomar a temperatura média, usando um pano protetor.",
   },
   {
     name: "Popeline",
+    image: "/images/tecidos/popeline.jpg",
     description: "Leve e fresca — perfeita para camisas e batas no clima de Luanda.",
     care: "Engomar a temperatura média, evitando criar brilho.",
   },
   {
     name: "Sarjinha",
+    image: "/images/tecidos/sarjinha.jpg",
     description: "Sarja mais leve, conforto com resistência para uso diário.",
     care: "Engomar a temperatura média-alta, pelo avesso.",
   },
   {
     name: "Malha",
+    image: "/images/tecidos/malha.jpg",
     description: "Elástica e respirável — a escolha certa para polos e t-shirts.",
     care: "Engomar a temperatura baixa, sem esticar o tecido.",
   },
@@ -181,21 +187,12 @@ export const processSteps = [
   },
 ];
 
-// TODO: substituir pelos logótipos reais dos clientes (com autorização).
-export const clients = [
-  "Cliente 1",
-  "Cliente 2",
-  "Cliente 3",
-  "Cliente 4",
-  "Cliente 5",
-  "Cliente 6",
-];
-
 export const nav = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre Nós" },
   { href: "/catalogo", label: "Catálogo" },
   { href: "/personalizar", label: "Personalizar 3D" },
+  { href: "/portfolio", label: "Portfólio" },
   { href: "/processo", label: "Nosso Processo" },
   { href: "/contactos", label: "Contactos" },
 ];
