@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageCircle, Phone, type LucideIcon } from "lucide-react";
 import { ButtonLink, PageHero } from "@/components/ui";
 import { company, whatsappLink } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Contactos" };
 
 export default function ContactosPage() {
-  const items = [
+  const items: { icon: LucideIcon; label: string; value: string; href?: string }[] = [
     { icon: MapPin, label: "Localização", value: company.address },
-    { icon: Phone, label: "Telefone", value: company.phone, href: `tel:${company.phone.replace(/\s/g, "")}` },
+    ...company.phones.map((phone, i) => ({
+      icon: Phone,
+      label: i === 0 ? "Telefone" : "Telefone (alternativo)",
+      value: phone,
+      href: `tel:${phone.replace(/\s/g, "")}`,
+    })),
     { icon: Mail, label: "Email", value: company.email, href: `mailto:${company.email}` },
     {
       icon: MessageCircle,
@@ -60,7 +65,7 @@ export default function ContactosPage() {
             {/* TODO: trocar a pesquisa por coordenadas exatas da fábrica */}
             <iframe
               title={`Mapa — ${company.address}`}
-              src={`https://www.google.com/maps?q=${encodeURIComponent(company.address)}&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent(company.mapQuery)}&output=embed`}
               className="h-full min-h-96 w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

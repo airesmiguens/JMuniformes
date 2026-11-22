@@ -39,7 +39,7 @@ export function Footer() {
           <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-white">Contactos</h3>
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-2"><MapPin size={16} className="mt-0.5 shrink-0 text-brand-400" />{company.address}</li>
-            <li className="flex gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-brand-400" />{company.phone}</li>
+            <li className="flex gap-2"><Phone size={16} className="mt-0.5 shrink-0 text-brand-400" />{company.phones.join(" / ")}</li>
             <li className="flex gap-2"><Mail size={16} className="mt-0.5 shrink-0 text-brand-400" />{company.email}</li>
             {company.hours.map((h) => (
               <li key={h.label} className="flex gap-2">

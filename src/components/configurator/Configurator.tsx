@@ -722,7 +722,7 @@ async function composeSheet(render: string, config: Config) {
   ctx.font = "400 20px Inter, sans-serif";
   ctx.fillStyle = "rgba(255,255,255,0.6)";
   ctx.fillText(`Amostra em ${terms.sampleDays} dias · Produção em ${terms.productionDays} dias úteis`, px + 40, 880);
-  ctx.fillText(`${company.phone} · ${company.email}`, px + 40, 912);
+  ctx.fillText(`${company.phones.join(" / ")} · ${company.email}`, px + 40, 912);
 
   return canvas.toDataURL("image/png");
 }

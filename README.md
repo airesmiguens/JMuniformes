@@ -1,6 +1,6 @@
 # JM Uniformes — website
 
-Site institucional da JM Uniformes (Viana, Luanda): catálogo, processo, pedido de orçamento via WhatsApp e configurador 3D de uniformes.
+Site institucional da JM Uniformes (Hoji-ya-Henda, Luanda): catálogo, processo, pedido de orçamento via WhatsApp e configurador 3D de uniformes.
 
 **Pré-visualização:** https://airesmiguens.github.io/JMuniformes/
 

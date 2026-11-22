@@ -5,9 +5,11 @@ export const company = {
   name: "JM Uniformes",
   tagline: "Produzindo identidade e profissionalismo para as empresas de Angola.",
   city: "Luanda, Angola",
-  address: "Viana, Luanda, Angola",
-  phone: "+244 923 456 789",
-  whatsapp: "244923456789", // só dígitos com indicativo
+  address: "Hoji-ya-Henda, Mabor — Rua direita da Escola 1º de Junho, Luanda",
+  /** Search used for the embedded map (the street name alone isn't on Google Maps). */
+  mapQuery: "Hoji ya Henda, Luanda, Angola",
+  phones: ["+244 923 179 968", "+244 975 089 602"],
+  whatsapp: "244923179968", // só dígitos com indicativo
   email: "geral@jmuniformes.co.ao",
   social: {
     instagram: "https://www.instagram.com/jmuniformes/",
